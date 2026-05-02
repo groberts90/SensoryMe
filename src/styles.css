@@ -1,0 +1,221 @@
+:root {
+  --bg: #fdf8f4;
+  --surface: #ffffff;
+  --surface2: #f7f2ee;
+  --border: rgba(0, 0, 0, 0.07);
+  --border2: rgba(0, 0, 0, 0.12);
+  --ink: #2d2926;
+  --muted: #8a8380;
+  --muted2: #b8b4b1;
+
+  /* Pastel rainbow */
+  --rose: #f4a7b9;
+  --peach: #f9c49a;
+  --yellow: #f7e08a;
+  --sage: #a8d5b5;
+  --sky: #9ecfe8;
+  --lavender: #c4b0e8;
+  --lilac: #e8b0d8;
+
+  /* Per-sense colours */
+  --sight-c: #f7e08a;
+  --auditory-c: #9ecfe8;
+  --tactile-c: #f9c49a;
+  --proprio-c: #a8d5b5;
+  --vest-c: #c4b0e8;
+  --olfact-c: #9ecfe8;
+  --gustatory-c: #f4a7b9;
+  --intero-c: #e8b0d8;
+
+  --sidebar-w: 270px;
+  --radius: 16px;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BASE */
+body {
+  font-family: "Nunito", sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* LAYOUT */
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: var(--sidebar-w);
+  flex-shrink: 0;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  inset: 0 auto 0 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.sidebar-logo {
+  padding: 28px 22px 22px;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.logo-blob {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--rose), var(--lavender));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.logo-text {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.logo-text span {
+  color: var(--rose);
+  font-style: italic;
+}
+
+.logo-tag {
+  font-size: 11px;
+  color: var(--muted2);
+  padding-left: 46px;
+}
+
+/* BUTTON */
+.sos-sidebar-btn {
+  margin: 16px 14px 4px;
+  padding: 13px 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ffb3c6, #c4b0e8);
+  border: none;
+  color: white;
+  font-family: "Nunito", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* MAIN */
+.main {
+  margin-left: var(--sidebar-w);
+  flex: 1;
+  min-height: 100vh;
+}
+
+/* VIEW */
+.view {
+  display: none;
+}
+.view.active {
+  display: block;
+}
+
+/* HOME */
+.home-hero {
+  padding: 56px 60px 36px;
+}
+
+.home-hero h1 {
+  font-family: "Playfair Display", serif;
+}
+
+/* GRID */
+.senses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 14px;
+  padding: 32px 60px 80px;
+}
+
+/* CARD */
+.sense-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 20px;
+  padding: 22px;
+  cursor: pointer;
+}
+
+/* FLOATING BAR */
+.floating-bar {
+  position: fixed;
+  bottom: 28px;
+  left: calc(var(--sidebar-w) + 40px);
+  right: 40px;
+  background: var(--ink);
+  color: white;
+  border-radius: 18px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* TOOLKIT */
+.toolkit-header {
+  padding: 52px 60px 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* SOS MODAL */
+.sos-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(45, 41, 38, 0.55);
+}
+
+.sos-overlay.open {
+  display: flex;
+}
+
+.sos-modal {
+  background: var(--surface);
+  border-radius: 28px;
+  max-width: 560px;
+  padding: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-w: 0px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .main {
+    margin-left: 0;
+  }
+}
