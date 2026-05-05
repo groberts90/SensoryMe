@@ -6,6 +6,8 @@ import Toast from "./Toast";
 import SOSModal from "./SOSModal";
 import { SENSES } from "./DummyData/dummyData";
 import "./styles.css";
+import useLocalStorage from "./hooks/useLocalStorage";
+import { useContext } from "react";
 
 export default function Main({
   view,
@@ -15,6 +17,8 @@ export default function Main({
   sosOpen,
   setSOSOpen,
 }) {
+  const storage = useLocalStorage('username', '');
+  
   return (
     <>
       <main className="main">

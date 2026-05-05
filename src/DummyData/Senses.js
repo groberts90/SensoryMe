@@ -1,0 +1,58 @@
+export const SENSES = [
+  {
+    id: "sight",
+    label: "Sight",
+    emoji: "👁️",
+    color: "#F5A623",
+    desc: "Light, colour, movement",
+  },
+  {
+    id: "sound",
+    label: "Sound",
+    emoji: "👂",
+    color: "#7B68EE",
+    desc: "Volume, pitch, unpredictability",
+  },
+  {
+    id: "touch",
+    label: "Touch",
+    emoji: "✋",
+    color: "#50C878",
+    desc: "Texture, pressure, temperature",
+  },
+  {
+    id: "body",
+    label: "Body & Balance",
+    emoji: "🧍",
+    color: "#FF7F7F",
+    desc: "Position, movement, grounding",
+  },
+  {
+    id: "smell",
+    label: "Smell",
+    emoji: "👃",
+    color: "#87CEEB",
+    desc: "Scent, intensity, familiarity",
+  },
+  {
+    id: "taste",
+    label: "Taste",
+    emoji: "👅",
+    color: "#FFB347",
+    desc: "Flavour, texture, temperature",
+  },
+  {
+    id: "internal",
+    label: "Internal Sensations",
+    emoji: "💭",
+    color: "#DDA0DD",
+    desc: "Hunger, thirst, fatigue, emotion",
+  },
+  {
+    id: "misc",
+    label: "General",
+    emoji: "🌿",
+    color: "#8FBC8F",
+    desc: "Cross-sensory strategies",
+  },
+];
